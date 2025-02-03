@@ -8,7 +8,7 @@ function Player:new()
     self.width = self.image:getWidth()
     self.height = self.image:getHeight()
     self.bounce = .7
-    self.speed = 200
+    self.speed = 250
     self.radius = 20
     self.xCord = 300
     self.yCord = 300

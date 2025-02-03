@@ -24,24 +24,26 @@ function love.update(dt)
     camera:update(dt)
     camera:follow(player.x, player.y)
 
+    --Player controls and movements
     player:update(dt)
-
-    --Stay within collision zone
-    --if checkCollision(player, borders) then
-    --    love.event.quit("restart")
-    --end
 
 end
 
 function love.draw()
     camera:attach()
+    camera:setBounds(-250, -128, pool:getWidth()/1.48, pool:getHeight()/1.45)
 
     love.graphics.draw(pool, -100, 0, 0, .5, .5, .5, .5)
     --borders:draw()
-
     
     player:draw()
     camera:detach()
+end
+
+function love.keypressed(key)
+    if key == "escape" then
+        love.event.quit()
+    end
 end
 
 
