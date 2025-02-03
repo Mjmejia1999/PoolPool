@@ -17,8 +17,7 @@ function Player:new()
 end
 
 function Player:update(dt)
-
-
+    --Triganometry to move the player towards the mouse
     mouse_x, mouse_y = love.mouse.getPosition()
     angle = math.atan2(self.yCord - self.y, self.xCord - self.x)
     cos = math.cos(angle)
