@@ -1,0 +1,30 @@
+--Player Movement
+    if love.keyboard.isDown("left") then
+        self.x = self.x - 200 * dt
+    elseif love.keyboard.isDown("right") then
+        self.x = self.x + 200 * dt
+    end
+
+    if love.keyboard.isDown("up") then
+        self.y =  self.y - 150 * dt
+    elseif love.keyboard.isDown("down") then
+        self.y = self.y + 150 * dt
+    end
+
+    --Bouncing Image
+        self.width = self.width + self.bounce * dt/3
+    self.height = self.height + self.bounce * dt/3
+    
+    
+    if self.width > 2 then
+        self.width = 2
+        self.height = 2
+        self.bounce = -self.bounce
+        print(tostring(self.width))
+    elseif self.width < 1.5 then
+        self.width = 1.5
+        self.height = 1.5
+        self.bounce = -self.bounce
+        print("Bounce!")
+        print(tostring(self.width))
+    end
